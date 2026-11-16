@@ -1,4 +1,4 @@
-// context-hud: a bar above the prompt with context fill, prompt-cache
+// neon-cockpit: a bar above the prompt with context fill, prompt-cache
 // countdown, the 5h / weekly limits, details, Compact and keep-warm.
 import { atom, read, update } from 'claude-code'
 import type { EngineInterface, Register, SessionContextUsage, SessionRateLimit } from 'claude-code'
@@ -10,23 +10,23 @@ import { addCtxPoint, addSample } from './model'
 import { band } from './view'
 
 // State refs (declared in ../types); repeated in actions.ts as the scan wants them per module.
-const usageAtom = atom({ plugin: 'context-hud', key: 'usage' } as const, null, { shape: 'usage-1' })
-const samplesAtom = atom({ plugin: 'context-hud', key: 'samples' } as const, [] as Sample[], {
+const usageAtom = atom({ plugin: 'neon-cockpit', key: 'usage' } as const, null, { shape: 'usage-1' })
+const samplesAtom = atom({ plugin: 'neon-cockpit', key: 'samples' } as const, [] as Sample[], {
   shape: 'samples-1',
 })
-const historyAtom = atom({ plugin: 'context-hud', key: 'history' } as const, [] as CtxPoint[], {
+const historyAtom = atom({ plugin: 'neon-cockpit', key: 'history' } as const, [] as CtxPoint[], {
   shape: 'history-1',
 })
-const focusAtom = atom({ plugin: 'context-hud', key: 'focus' } as const, NO_FOCUS, { shape: 'focus-1' })
-const lastRequestAtom = atom({ plugin: 'context-hud', key: 'lastRequestAt' } as const, null)
-const nowAtom = atom({ plugin: 'context-hud', key: 'now' } as const, 0)
-const expandedAtom = atom({ plugin: 'context-hud', key: 'isExpanded' } as const, false)
-const compactPhaseAtom = atom({ plugin: 'context-hud', key: 'compactPhase' } as const, 'idle')
-const keypointsAtom = atom({ plugin: 'context-hud', key: 'keypoints' } as const, null)
-const warmUntilAtom = atom({ plugin: 'context-hud', key: 'warmUntil' } as const, null)
+const focusAtom = atom({ plugin: 'neon-cockpit', key: 'focus' } as const, NO_FOCUS, { shape: 'focus-1' })
+const lastRequestAtom = atom({ plugin: 'neon-cockpit', key: 'lastRequestAt' } as const, null)
+const nowAtom = atom({ plugin: 'neon-cockpit', key: 'now' } as const, 0)
+const expandedAtom = atom({ plugin: 'neon-cockpit', key: 'isExpanded' } as const, false)
+const compactPhaseAtom = atom({ plugin: 'neon-cockpit', key: 'compactPhase' } as const, 'idle')
+const keypointsAtom = atom({ plugin: 'neon-cockpit', key: 'keypoints' } as const, null)
+const warmUntilAtom = atom({ plugin: 'neon-cockpit', key: 'warmUntil' } as const, null)
 
 const NO_PINGS: WarmInfo = { pings: 0, lastPingAt: null, lastCacheRead: null, note: null }
-const warmInfoAtom = atom({ plugin: 'context-hud', key: 'warmInfo' } as const, NO_PINGS, {
+const warmInfoAtom = atom({ plugin: 'neon-cockpit', key: 'warmInfo' } as const, NO_PINGS, {
   shape: 'warm-1',
 })
 
@@ -162,11 +162,11 @@ export const register: Register = on => {
       return await drawBand($, e, t)
     } catch (err) {
       // Show why instead of vanishing silently.
-      return <t.Text color="#FF3B5C">{`context-hud: ${err instanceof Error ? err.message : String(err)}`}</t.Text>
+      return <t.Text color="#FF3B5C">{`neon-cockpit: ${err instanceof Error ? err.message : String(err)}`}</t.Text>
     }
   })
   on('ui.fault', async ($, e, next) => {
-    $.ui.toast(`context-hud ${e.phase}: ${e.reason}`.slice(0, 300))
+    $.ui.toast(`neon-cockpit ${e.phase}: ${e.reason}`.slice(0, 300))
     return next(e)
   })
 }

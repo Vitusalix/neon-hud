@@ -1,10 +1,10 @@
 {
-  "name": "context-hud",
+  "name": "neon-cockpit",
   "version": "1.0.0",
   "description": "Cockpit bar above the prompt: context fill with scale, prompt-cache countdown, 5h and weekly limits, a guided Compact button and keep-warm.",
   "author": { "name": "Vitusalix" },
   "license": "MIT",
-  "homepage": "https://github.com/Vitusalix/claude-context-hud",
+  "homepage": "https://github.com/Vitusalix/neon-hud",
   "icon": "./.claude-plugin/icon.png",
   "types": "./types/index.d.ts"
 }

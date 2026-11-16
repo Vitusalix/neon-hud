@@ -7,20 +7,20 @@ import type { WarmInfo } from '../types'
 import { WARM_LEAD_MS, WARM_MAX_MS, cacheState, extractKeypoints } from './model'
 
 // The same state refs as register.tsx: the scan wants them declared in each module.
-const lastRequestAtom = atom({ plugin: 'context-hud', key: 'lastRequestAt' } as const, null)
-const compactPhaseAtom = atom({ plugin: 'context-hud', key: 'compactPhase' } as const, 'idle')
-const keypointsAtom = atom({ plugin: 'context-hud', key: 'keypoints' } as const, null)
-const warmUntilAtom = atom({ plugin: 'context-hud', key: 'warmUntil' } as const, null)
+const lastRequestAtom = atom({ plugin: 'neon-cockpit', key: 'lastRequestAt' } as const, null)
+const compactPhaseAtom = atom({ plugin: 'neon-cockpit', key: 'compactPhase' } as const, 'idle')
+const keypointsAtom = atom({ plugin: 'neon-cockpit', key: 'keypoints' } as const, null)
+const warmUntilAtom = atom({ plugin: 'neon-cockpit', key: 'warmUntil' } as const, null)
 
 const NO_PINGS: WarmInfo = { pings: 0, lastPingAt: null, lastCacheRead: null, note: null }
-const warmInfoAtom = atom({ plugin: 'context-hud', key: 'warmInfo' } as const, NO_PINGS, {
+const warmInfoAtom = atom({ plugin: 'neon-cockpit', key: 'warmInfo' } as const, NO_PINGS, {
   shape: 'warm-1',
 })
 
 const COMPACT_PROMPT = T.compactPrompt
 
 const PING_PROMPT =
-  'Keep-alive ping from the context-hud mod. You have no tools. ' +
+  'Keep-alive ping from the neon-cockpit mod. You have no tools. ' +
   'Do not think it over; reply with exactly: ok'
 
 /** Turns without keypoints tolerated while preparing (a turn that was already running). */

@@ -53,7 +53,7 @@ const en = {
   projUntilReset: 'Estimate: lasts until the reset at the current pace',
   projReaches: (d: string) => `Estimate: about ${d} to the limit at the current pace`,
   compactPrompt: [
-    'Prepare a compact (from the context-hud mod):',
+    'Prepare a compact (from the neon-cockpit mod):',
     '1. Finish the current step cleanly, start nothing new.',
     `2. Update your notes file (${NOTES_FILE}) with: goal, status, decisions, open points, important files, next step.`,
     '3. End your answer with the keypoints for the compact, 3-8 short lines, framed exactly like this:',
@@ -123,7 +123,7 @@ const de: typeof en = {
   projUntilReset: 'Schätzung: reicht bei derzeitiger Nutzung bis zum Reset',
   projReaches: d => `Schätzung: bei derzeitiger Nutzung ca. ${d} bis zur Grenze`,
   compactPrompt: [
-    'Compact vorbereiten (vom context-hud Mod):',
+    'Compact vorbereiten (vom neon-cockpit Mod):',
     '1. Bring den aktuellen Teilschritt sauber zu Ende, fang nichts Neues an.',
     `2. Aktualisiere deine Notiz-Datei (${NOTES_FILE}) mit: Ziel, Stand, Entscheidungen, offene Punkte, wichtige Dateien, nächster Schritt.`,
     '3. Beende deine Antwort mit den Keypoints für den Compact, 3-8 kurze Zeilen, genau so eingerahmt:',

@@ -1,4 +1,12 @@
-# context-hud
+# neon-hud
+
+Cyberpunk-styled bars for **Claude Code**. Each design is its own plugin in this marketplace.
+
+| Plugin | Look |
+|---|---|
+| **neon-cockpit** | Big context percent, scaled bar, rings for cache and limits, stacked buttons with state icons |
+
+## neon-cockpit
 
 A cockpit bar above the prompt of **Claude Code** (desktop app, also the terminal): how full the context is, when the prompt cache expires, how much of your 5-hour and weekly limits is used, plus a guided **Compact** button and **Keep warm**.
 
@@ -21,20 +29,20 @@ You need Claude Code with plugin (mod) support, a recent desktop app or CLI.
 In a Claude Code chat, type:
 
 ```
-/plugin marketplace add Vitusalix/claude-context-hud
-/plugin install context-hud@claude-context-hud
+/plugin marketplace add Vitusalix/neon-hud
+/plugin install neon-cockpit@neon-hud
 ```
 
 Or in a terminal:
 
 ```bash
-claude plugin marketplace add Vitusalix/claude-context-hud
-claude plugin install context-hud@claude-context-hud --scope user
+claude plugin marketplace add Vitusalix/neon-hud
+claude plugin install neon-cockpit@neon-hud --scope user
 ```
 
 Then type `/reload-plugins` in open chats (new chats load it on their own).
 
-Update later with `/plugin marketplace update claude-context-hud`, then `/reload-plugins`.
+Update later with `/plugin marketplace update neon-hud`, then `/reload-plugins`.
 
 ## Settings
 
@@ -62,23 +70,23 @@ Short version: press **Compact** → Claude updates the notes file and writes ke
 ## Development
 
 ```bash
-claude plugin validate plugins/context-hud
-claude plugin test plugins/context-hud
+claude plugin validate plugins/neon-cockpit
+claude plugin test plugins/neon-cockpit
 ```
 
-Code: `plugins/context-hud/hooks/`. Texts in `i18n.ts`, drawing in `view.tsx` and `svg-wide.ts`, logic in `actions.ts` and `register.tsx`.
+Code: `plugins/neon-cockpit/hooks/`. Texts in `i18n.ts`, drawing in `view.tsx` and `svg-wide.ts`, logic in `actions.ts` and `register.tsx`.
 
 ---
 
 ## Deutsch (kurz)
 
-Eine Leiste über der Eingabezeile von Claude Code: Kontext-Füllstand, Cache-Countdown, 5-Stunden- und Wochenlimit, dazu ein geführter **Compact**-Knopf und **Warm halten**.
+neon-cockpit: eine Leiste über der Eingabezeile von Claude Code: Kontext-Füllstand, Cache-Countdown, 5-Stunden- und Wochenlimit, dazu ein geführter **Compact**-Knopf und **Warm halten**.
 
 **Installieren** (im Chat):
 
 ```
-/plugin marketplace add Vitusalix/claude-context-hud
-/plugin install context-hud@claude-context-hud
+/plugin marketplace add Vitusalix/neon-hud
+/plugin install neon-cockpit@neon-hud
 ```
 
 Danach `/reload-plugins`. Auf Deutsch umstellen: in `hooks/config.ts` `LANG = 'de'` setzen, dann `/reload-plugins`.

@@ -6,7 +6,7 @@ This page shows the full setup as the author uses it. You can take all of it or 
 
 ## 1. Pick the notes file
 
-In `plugins/context-hud/hooks/config.ts` (after installing: in the plugin's folder, see the README):
+In `plugins/neon-cockpit/hooks/config.ts` (after installing: in the plugin's folder, see the README):
 
 ```ts
 export const LANG: 'en' | 'de' = 'en'

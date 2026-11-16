@@ -40,7 +40,7 @@ export type WarmInfo = {
 
 declare module 'claude-code' {
   interface PluginState {
-    'context-hud': {
+    'neon-cockpit': {
       usage: Shaped<Usage | null>
       samples: Shaped<Sample[]>
       history: Shaped<CtxPoint[]>
