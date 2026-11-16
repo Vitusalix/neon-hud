@@ -1,0 +1,12 @@
+{
+  "name": "claude-context-hud",
+  "description": "context-hud: a cockpit bar for Claude Code with context, cache and limits at a glance.",
+  "owner": { "name": "Vitusalix" },
+  "plugins": [
+    {
+      "name": "context-hud",
+      "source": "./plugins/context-hud",
+      "description": "Cockpit bar above the prompt: context fill, prompt-cache countdown, 5h and weekly limits, guided Compact and keep-warm."
+    }
+  ]
+}
